@@ -6,7 +6,7 @@ package ejercicio4;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Gallina {
     private int idGallina;

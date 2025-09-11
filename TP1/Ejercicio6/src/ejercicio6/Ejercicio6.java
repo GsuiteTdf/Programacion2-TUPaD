@@ -6,7 +6,7 @@ package ejercicio6;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Ejercicio6 {
 
@@ -14,7 +14,7 @@ public class Ejercicio6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Nombre: Juan Pérez\nEdad: 30 años\nDirección: \"Calle Falsa 123\"");
+        System.out.println("Nombre: Jorge Rojas\nEdad: 40 años\nDirección: \"Calle Efimera 666\"");
     }
     
 }

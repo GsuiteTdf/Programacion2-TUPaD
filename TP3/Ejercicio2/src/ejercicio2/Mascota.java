@@ -6,7 +6,7 @@ package ejercicio2;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Mascota {
     private String nombre;

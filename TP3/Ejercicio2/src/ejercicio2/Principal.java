@@ -6,7 +6,7 @@ package ejercicio2;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Principal {
 
@@ -15,9 +15,9 @@ public class Principal {
      */
     public static void main(String[] args) {
         Mascota mascota = new Mascota();
-        mascota.setNombre("Gumy");
+        mascota.setNombre("Chicho");
         mascota.setEspecie("Perro");
-        mascota.setEdad(3);
+        mascota.setEdad(2);
 
         System.out.println(mascota.getInformacionCompleta());
 

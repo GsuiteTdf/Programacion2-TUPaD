@@ -5,7 +5,7 @@
 package ejercicio13;
 
 /** 
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Ejercicio13 {
 

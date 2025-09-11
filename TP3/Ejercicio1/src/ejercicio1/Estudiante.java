@@ -6,7 +6,7 @@ package ejercicio1;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Estudiante {
     private String nombre;

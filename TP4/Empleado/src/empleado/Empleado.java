@@ -6,34 +6,37 @@ package empleado;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Empleado {
     private int id;
-    // Se agrego este atributo para manejar IDs únicos
     private static java.util.HashSet<Integer> idsUsados = new java.util.HashSet<>();
     private String nombre;
     private String puesto;
     private double salario;
-    static int totalEmpleados = 0;
+    private static int totalEmpleados = 0;
+    private static final double SALARIO_POR_DEFECTO = 30000.0;
 
     public Empleado(int id, String nombre, String puesto, double salario) {
-        setId(id);
+        asignarIdSeguro(id);
         this.nombre = nombre;
         this.puesto = puesto;
         this.salario = salario;
         totalEmpleados++;
     }
 
-    public Empleado(String nombre, String puesto ) {
-        int nuevoId = idsUsados.isEmpty() ? 1 : java.util.Collections.max(idsUsados) + 1;
-        setId(nuevoId);
+    public Empleado(String nombre, String puesto) {
+        int nuevoId = generarNuevoId();
+        asignarIdSeguro(nuevoId);
         this.nombre = nombre;
         this.puesto = puesto;
-        this.salario = 30000; // Salario por defecto
+        this.salario = SALARIO_POR_DEFECTO;
         totalEmpleados++;
     }
-    public void setId(int id) {
+
+    public int getId() { return id; }
+
+    private void asignarIdSeguro(int id) {
         if (idsUsados.contains(id)) {
             throw new IllegalArgumentException("El id " + id + " ya está en uso");
         }
@@ -41,27 +44,48 @@ public class Empleado {
         this.id = id;
     }
 
-    public double actualizarSalario(double porcentajeAumento) {
-        if (porcentajeAumento > 0) {
-            salario += salario * (porcentajeAumento / 100);
-        }
+    private int generarNuevoId() {
+        return idsUsados.isEmpty() ? 1 : java.util.Collections.max(idsUsados) + 1;
+    }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) {
+        if (nombre == null || nombre.trim().isEmpty()) throw new IllegalArgumentException("El nombre no puede ser vacío");
+        this.nombre = nombre;
+    }
+
+    public String getPuesto() { return puesto; }
+    public void setPuesto(String puesto) {
+        if (puesto == null || puesto.trim().isEmpty()) throw new IllegalArgumentException("El puesto no puede ser vacío");
+        this.puesto = puesto;
+    }
+
+    public double getSalario() { return salario; }
+    public void setSalario(double salario) {
+        if (salario < 0) throw new IllegalArgumentException("El salario no puede ser negativo");
+        this.salario = salario;
+    }
+
+    /** Aumento por porcentaje (ej. 10 => 10%) */
+    public double actualizarSalarioPorcentaje(double porcentajeAumento) {
+        if (porcentajeAumento <= 0) throw new IllegalArgumentException("El porcentaje debe ser mayor que 0");
+        salario += salario * (porcentajeAumento / 100.0);
         return salario;
     }
-    
-    public double actualizarSalario(double montoFijo, boolean esMontoFijo) {
-        if (esMontoFijo && montoFijo > 0) {
-            salario += montoFijo;
-        }
+
+    /** Aumento por monto fijo (ej. 5000 => suma 5000 al salario) */
+    public double actualizarSalarioFijo(double montoFijo) {
+        if (montoFijo <= 0) throw new IllegalArgumentException("El monto fijo debe ser mayor que 0");
+        salario += montoFijo;
         return salario;
     }
 
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", puesto=" + puesto + ", salario=" + salario + '}';
+        return String.format("Empleado{id=%d, nombre=%s, puesto=%s, salario=%.2f}", id, nombre, puesto, salario);
     }
 
     public static int mostrarTotalEmpleados() {
         return totalEmpleados;
     }
-    
 }

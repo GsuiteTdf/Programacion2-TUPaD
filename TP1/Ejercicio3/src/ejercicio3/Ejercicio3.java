@@ -6,7 +6,7 @@ package ejercicio3;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Ejercicio3 {
 
@@ -14,9 +14,9 @@ public class Ejercicio3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String nombre = "Gustavo";
-        int edad = 37;
-        double altura = 1.83;
+        String nombre = "Gastón";
+        int edad = 36;
+        double altura = 1.78;
         boolean estudiante = true;
         System.out.println(nombre + " de " + edad + " años, mide " + altura + ".\n¿Es estudiante? " + estudiante);
     }

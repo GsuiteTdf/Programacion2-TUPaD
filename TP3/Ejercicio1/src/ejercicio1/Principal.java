@@ -6,7 +6,7 @@ package ejercicio1;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class Principal {
     /**
@@ -14,7 +14,7 @@ public class Principal {
      */
     public static void main(String[] args) {
         Estudiante estudiante = new Estudiante();
-        estudiante.setInformacionCompleta("Gustavo", "Tiseira", "A", 0);
+        estudiante.setInformacionCompleta("Gaston", "Cejas", "A", 0);
         System.out.println(estudiante.getInformacionCompleta());
         estudiante.subirCalificacion(7.8);
         System.out.println("Después de subir la calificación:");

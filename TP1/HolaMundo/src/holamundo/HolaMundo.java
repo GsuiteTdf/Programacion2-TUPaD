@@ -6,7 +6,7 @@ package holamundo;
 
 /**
  *
- * @author gtiseira
+ * @author GastonCejas
  */
 public class HolaMundo {
 
@@ -14,7 +14,7 @@ public class HolaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("¡Hola, Java!");
+        System.out.println("¡Hola, Mundo de Java!");
     }
     
 }
