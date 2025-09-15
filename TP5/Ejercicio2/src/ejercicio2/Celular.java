@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejercicio1;
+package ejercicio2;
 
 import java.util.Scanner;
 
@@ -72,4 +72,5 @@ public class Celular {
     public String toString() {
         return "Celular{" + "imei=" + imei + ", marca=" + marca + ", modelo=" + modelo + '}';
     }
+
 }
